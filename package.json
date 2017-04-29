@@ -1,0 +1,28 @@
+{
+  "name": "hyperify",
+  "version": "0.0.0",
+  "description": "Browserify transform for hyperHTML templates",
+  "keywords": [
+    "browserify",
+    "dom",
+    "hyper",
+    "html",
+    "hyperhtml",
+    "templates",
+    "templating",
+    "transform"
+  ],
+  "main": "index.js",
+  "repository": "git@github.com:joshgillies/hyperify.git",
+  "author": "Josh Gillies <github@josh.gl>",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^14.3.0",
+    "standard": "^10.0.2",
+    "tape": "^4.6.3",
+    "viperhtml": "^0.5.4"
+  },
+  "scripts": {
+    "test": "standard && tape test"
+  }
+}
