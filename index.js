@@ -10,9 +10,25 @@ function isTemplate (filename, ext) {
   return regex[ext].test(filename)
 }
 
+function getArgs (options) {
+  var args = options.a
+  if (!args && options.args) args = options.args || options.args._
+  if (!args && options.arguments) args = options.arguments._
+  if (!args) args = ['render', 'data']
+  return args
+}
+
+function getExt (options) {
+  var ext = options.e
+  if (!ext && options.ext) ext = options.ext._ ? options.ext._[0] : options.ext
+  if (!ext && options.extension) ext = options.jxtension._[0]
+  if (!ext) ext = '.html'
+  return ext
+}
+
 module.exports = function hyperify (filename, options) {
-  var args = options.args || ['render', 'data']
-  var ext = options.ext || '.html'
+  var args = getArgs(options)
+  var ext = getExt(options)
   var chunks = []
 
   if (!isTemplate(filename, ext)) return through()

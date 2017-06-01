@@ -57,10 +57,17 @@ Then add `hyperify` to your list of `browserify` transforms:
 browserify -t hyperify index.js > bundle.js
 ```
 
+Additionally you can configure `hyperify` via CLI as follows:
+
+```sh
+browserify -t [ hyperify -e '.hyper.html' -a render -a model ] index.js > bundle.js
+```
+
 ## Options
 
- - **ext** - Define which file extension to apply the transform to. *Default: `'.html'`*
- - **args** - Define which arguments the template function should be called with. *Default: `['render', 'data']`*
+ - **-e** | **--ext** | **--extension** - Define which file extension to apply the transform to. *Default: `'.html'`*
+ - **-a** | **--args** | **--arguments** - Define which arguments the template function should be called with. *Default: `['render', 'data']`*
+   _Note: the first arg should always be your render function._
 
 ## License
 
